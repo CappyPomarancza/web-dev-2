@@ -50,11 +50,11 @@ const years = [1954, 1974, 1990, 2014];
 const multipleTypeArray = [1954, 'Ala', 'ma', 'kota', years, age, year];
 // console.log('szukam Ali index = 1', multipleTypeArray[1]);
 // console.log('index = 3', multipleTypeArray[3]);
-console.log('multipleTypeArray before', multipleTypeArray);
-
+// console.log('multipleTypeArray before', multipleTypeArray);
+//
 multipleTypeArray[1] = 'Kacper';
 
-console.log('multipleTypeArray after', multipleTypeArray);
+// console.log('multipleTypeArray after', multipleTypeArray);
 
 // console.log('years', years);
 // console.log('years', years.length);
@@ -82,21 +82,21 @@ const person = {
     ]
 };
 
-console.log('person typeof', typeof person);
-console.log('person', person);
-console.log(' person.name', person.name);
-console.log(' person.lastName', person.lastName);
-console.log('person.friends', person.friends);
-
-console.log('person.friends konkretna osoba', person.friends[1].name);
+// console.log('person typeof', typeof person);
+// console.log('person', person);
+// console.log(' person.name', person.name);
+// console.log(' person.lastName', person.lastName);
+// console.log('person.friends', person.friends);
+//
+// console.log('person.friends konkretna osoba', person.friends[1].name);
 
 
 // All values are truthy unless they are defined as falsy.!!!!
-console.log('!!-0', !!-0);
-console.log('-0', -0);
-
-console.log(' 3 / -0', 3 / -0);
-console.log('3 / 0', 3 / 0);
+// console.log('!!-0', !!-0);
+// console.log('-0', -0);
+//
+// console.log(' 3 / -0', 3 / -0);
+// console.log('3 / 0', 3 / 0);
 
 // Falsy variables are:
 //         false,
@@ -134,13 +134,16 @@ let y = 2 - 3;
 //     + is also concatenation operator!
 //     Try:
 
-let result = 'Ala ' + 'ma' + 'kota';
+let result = 'Ala ' + 'ma ' + 'kota';
+// console.log('result', result);
+
 // It can make problems!
 
 // * and /
 // let a = 2 / 2;
 // let b = a * 2;
 // let c = a * b;
+// console.log('c', c);
 
 // Modulo %
 
@@ -149,9 +152,30 @@ let result = 'Ala ' + 'ma' + 'kota';
 // let c = 2 % 4; // result is 2
 
 let a = 2;
-let b = 4;
-a += a; // result is 4
-b -= b; // result is 0
+let b = 100;
+
+// console.log('a +=5 ', a+=5);
+
+// b -= b; // result is 0
+// b -= 10;
+// b -= 20;
+// console.log('b', b);
+
+// a += 5;
+// a++;
+
+// a--;
+// console.log('a--', a--);
+// console.log('a', a);
+//
+// console.log('--a', --a);
+//
+// console.log('a', a);
+
+
+// a += a; // result is 4
+
+// a+=1;
 
 // Checkout on console:
 
@@ -178,8 +202,6 @@ b -= b; // result is 0
 // console.log('b', b);
 
 
-
-
 //Comparison and logical operators
 //Equality ==
 // == operator try to converts and compare the operands
@@ -187,17 +209,24 @@ b -= b; // result is 0
 // objects, then JS checks if operands refer to the same
 // object in memory.
 //
-// console.log("1 == 1", 1 == 1); // true
-// console.log("'1' == 1", '1' == 1); // true
-// console.log("1 == '1'",1 == '1'); // true
-// console.log("0 == false", 0 == false); // true
 
+// console.log("1 == 1", 1 == 1);
+// console.log("'1' == 1", '1' == 1);
+// console.log("1 == '1'",1 == '1');
+// console.log("1 != 1", 1 != 1);
+// console.log("'1' != 1", '1' != 1);
+// console.log("1 != '1'",1 != '1');
+// console.log("0 != false", 0 != false);
 
 let object1 = {key: 'value'};
 let object2 = {key: 'value'};
 let object3 = object1;
-// console.log('object1 == object2', object1 == object2); //false
-// console.log('object3 == object1', object3 == object1); //true
+
+// console.log('object1 == object2', object1 == object2);
+
+// console.log('object2 == object3', object3 == object1);
+// console.log('object1.key == object2.key', object1.key == object2.key);
+
 
 // Comparison and logical operators
 // Strict equality (===)
@@ -205,11 +234,14 @@ let object3 = object1;
 // The strict equality operator returns true if the operands are
 // strictly equal with no type conversion!
 
-// console.log("1 === 1", 1 === 1); // true
-// console.log("'1' === 1", '1' === 1); // false
+console.log("1 === 1", 1 === 1); // true
+console.log("'1' === 1", '1' === 1); // false
 
 // Comparison and logical operators
 // Strict inequality (!==)
 
 // Do opposite thing as strict equality (checks if operands are
 // NOT equal).
+
+console.log("1 !== 1", 1 !== 1); // true
+console.log("'1' !== 1", '1' !== 1); // false
