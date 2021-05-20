@@ -250,7 +250,7 @@ let object3 = object1;
 //
 // true && true
 
-let fruits = [ 'jabłko', 'banan', 'gruszka', 'mandarynka', 'gruszka', 'mango', 'ananas']
+let fruits = [ 'jabłko', 'banan', 'gruszka', 'mandarynka', 'gruszka', 'mango', 'ananas'];
 
 // console.log('fruits', fruits);
 let i;
@@ -281,14 +281,14 @@ helloSentence = name?
         : 'Hello User!';
 
 
-console.log('helloSentence', helloSentence);
+// console.log('helloSentence', helloSentence);
 
 
 
 
 
 
-let number = 15;
+let number;
 if (!number){
 
 } else {
@@ -319,3 +319,48 @@ switch (number) {
         break;
 }
 
+// let menuList = ['frytki', 'dorsz', 'topinambur'];
+// let myOrder = [];
+let myOrder = ['frytki', 'ketchup', 'topinambur', 'batanty', 'dorsz'];
+
+let menuList = new Array(3);
+menuList[0] = 'frytki';
+menuList[1] = 'dorsz';
+menuList[2] = 'topinambur';
+menuList[3] = 'batanty';
+// menuList.length = 0;
+myOrder.push('piwo'); // add new element to array and return new length of array
+// myOrder.pop(); // delete last element from array and return this element
+
+myOrder.unshift('pizza'); // add first element to array and return new length of array
+
+// myOrder.shift(); // delete first element from array and return this element
+
+// let test = myOrder.splice(2, 2);
+// let test = myOrder.splice(2, myOrder.length - 2);
+//  myOrder.splice(2); // deleted all elements start in pass index number
+// let test = myOrder.splice();
+
+// let test = myOrder.slice();
+
+// let test = myOrder.slice(1, 5);
+
+myOrder.slice(3);
+
+
+// console.log('myOrder', myOrder);
+// let test = myOrder.join(); // default separator is  ","
+// let test = myOrder.join('-');
+
+let test = myOrder.concat(fruits);
+
+console.log('test', test);
+
+console.log('myOrder', myOrder);
+
+
+const dish = {
+    id: 1,
+    name: 'frytki',
+    price: 15,
+};
