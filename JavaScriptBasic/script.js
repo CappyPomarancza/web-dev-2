@@ -31,7 +31,7 @@ let onlyFalse = false;
 // console.log('onlyFalse', onlyFalse);
 
 // String literals:
-const name = 'Kacper';
+let name = 'Kacper';
 const lastName = "Swietlaga";
 // console.log('name', typeof name);
 // console.log('!!name', !!name);
@@ -234,8 +234,8 @@ let object3 = object1;
 // The strict equality operator returns true if the operands are
 // strictly equal with no type conversion!
 
-console.log("1 === 1", 1 === 1); // true
-console.log("'1' === 1", '1' === 1); // false
+// console.log("1 === 1", 1 === 1); // true
+// console.log("'1' === 1", '1' === 1); // false
 
 // Comparison and logical operators
 // Strict inequality (!==)
@@ -243,5 +243,79 @@ console.log("'1' === 1", '1' === 1); // false
 // Do opposite thing as strict equality (checks if operands are
 // NOT equal).
 
-console.log("1 !== 1", 1 !== 1); // true
-console.log("'1' !== 1", '1' !== 1); // false
+// console.log("1 !== 1", 1 !== 1); // true
+// console.log("'1' !== 1", '1' !== 1); // false
+
+// true || false
+//
+// true && true
+
+let fruits = [ 'jabłko', 'banan', 'gruszka', 'mandarynka', 'gruszka', 'mango', 'ananas']
+
+// console.log('fruits', fruits);
+let i;
+
+name = 'Kacper';
+let helloSentence = '';
+let isfirstLog = false;
+
+// if (name) {
+//     helloSentence = 'Hello ' + name + '!';
+// } else if (isfirstLog) {
+//     helloSentence = 'Hello New User!';
+// } else {
+//     helloSentence = 'Hello User!';
+// }
+
+
+// if (name) {
+//     helloSentence = 'Hello ' + name + '!';
+// } else {
+//     helloSentence = 'Hello User!';
+// }
+
+helloSentence = name?
+    ('Hello ' + name + '!')
+    : isfirstLog?
+        'Hello New User!'
+        : 'Hello User!';
+
+
+console.log('helloSentence', helloSentence);
+
+
+
+
+
+
+let number = 15;
+if (!number){
+
+} else {
+    if (number === 5) {
+        console.log('masz lat 5 możesz kuipić jedynie cukierki');
+    } else if(number === 10) {
+        console.log('masz lat 10 możesz kuipić cukierki i oranżadę i wodę gazowaną');
+    } else if (number == 15) {
+        console.log('masz lat 15 możesz kuipić cukierki i oranżade i lody ekipy');
+    } else if (number === 18) {
+        console.log('masz lat 18 możesz kupić oprócz lodów piwo i amantadynę w aptece');
+    }
+}
+
+
+switch (number) {
+    case 5:
+        console.log('masz lat 5 możesz kuipić jedynie cukierki');
+        break;
+    case 10:
+        console.log('masz lat 10 możesz kuipić cukierki i oranżadę i wodę gazowaną');
+        break;
+    case 15:
+        console.log('masz lat 15 możesz kuipić cukierki i oranżade i lody ekipy');
+        break;
+    case 18:
+        console.log('masz lat 18 możesz kupić oprócz lodów piwo i amantadynę w aptece');
+        break;
+}
+
