@@ -125,7 +125,7 @@ comment
 // Basic math operations
 // + and -
 
-let x = 1 + 1;
+let x = 10 + 1;
 let y = 2 - 3;
 // let z = a + b;
 // console.log('z', z); // if let ->script.js:78 Uncaught ReferenceError: Cannot access 'a' before initialization
@@ -354,9 +354,9 @@ myOrder.slice(3);
 
 let test = myOrder.concat(fruits);
 
-console.log('test', test);
+// console.log('test', test);
 
-console.log('myOrder', myOrder);
+// console.log('myOrder', myOrder);
 
 
 const dish = {
@@ -364,3 +364,77 @@ const dish = {
     name: 'frytki',
     price: 15,
 };
+
+// function helloUser() {
+//     console.log('Hello User');
+// }
+
+// const helloUser = function () {
+//     console.log('Hello User');
+// };
+
+// const helloUser = () => {
+//     console.log('Hello User', a);
+// };
+
+// helloUser();
+let sum = 0;
+
+const add = (a, b) => {
+     x = 2;
+     y = 6;
+    sum = a + b;
+};
+
+add(0,9);
+
+// let resultAdd = add;
+
+// (function (a, b) {
+//     sum = a + b;
+// })(0,9);
+
+const order = [
+    {
+        name: 'frytki',
+        price: 15,
+    },
+    {
+        name: 'piwo',
+        price: 10,
+    },
+    {
+        name: 'dorsz',
+        price: 28,
+    },
+    {
+        name: 'kompot',
+        price: 7,
+    },
+    {
+        name: 'pomidorowa',
+        price: 9,
+    },
+    {
+        name: 'hamburger',
+        price: 30,
+    },
+    {
+        name: 'stek',
+        price: 45,
+    }
+];
+
+let forLoopOrderArray = [];
+
+for (let i = 0; i < order.length; i++) {
+    forLoopOrderArray.push(order[i].name)
+}
+
+console.log('forLoopOrderArray', forLoopOrderArray);
+
+let newOrderArray = order.map((element, index, array) => {
+    return element.name + ' cena: ' + element.price;
+});
+console.log('newOrderArray', newOrderArray);
+console.log('order', order);
