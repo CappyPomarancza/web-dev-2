@@ -398,43 +398,88 @@ const order = [
     {
         name: 'frytki',
         price: 15,
+        vege: true
     },
     {
         name: 'piwo',
         price: 10,
-    },
-    {
-        name: 'dorsz',
-        price: 28,
+        vege: true
     },
     {
         name: 'kompot',
         price: 7,
+        vege: true
     },
     {
         name: 'pomidorowa',
         price: 9,
+        vege: false
+    },
+    {
+        name: 'dorsz',
+        price: 28,
+        vege: false
     },
     {
         name: 'hamburger',
         price: 30,
+        vege: false
     },
     {
         name: 'stek',
         price: 45,
+        vege: false
     }
 ];
 
-let forLoopOrderArray = [];
+let orderMapResultByFor = [];
 
 for (let i = 0; i < order.length; i++) {
-    forLoopOrderArray.push(order[i].name)
+    orderMapResultByFor.push(order[i].name)
+}
+// console.log('orderMapResultByFor', orderMapResultByFor);
+
+let orderMapResult = order.map((el, i, arr) => {
+    return el.name + ' cena pozycja: ' + el.price
+});
+// console.log('orderMapResult', orderMapResult);
+
+let orderFilterResultByFor = [];
+for (let i = 0; i < order.length; i++) {
+    if (order[i].price < 20 && order[i].vege) {
+        orderFilterResultByFor.push(order[i])
+    }
 }
 
-console.log('forLoopOrderArray', forLoopOrderArray);
-
-let newOrderArray = order.map((element, index, array) => {
-    return element.name + ' cena: ' + element.price;
+let orderFilterResult = order.filter(element => {
+    return element.price < 20 && element.vege
 });
-console.log('newOrderArray', newOrderArray);
-console.log('order', order);
+
+console.log('orderFilterResult', orderFilterResult);
+console.log('orderFilterResultByFor', orderFilterResultByFor);
+
+
+let orderMapAndFilterResult =
+    order
+        .filter(element => element.price > 10)
+        .map(element => element.price)
+
+// console.log('orderMapAndFilterResult', orderMapAndFilterResult);
+
+let totalPrice = 0;
+for (let i = 0; i < order.length; i ++) {
+    totalPrice += order[i].price
+}
+console.log('totalPrice', totalPrice);
+
+let orderReduceResult = order
+    .map(el => el.price)
+    .reduce((previousValue, currentValue) => {
+        return previousValue + currentValue
+    }, 0)
+
+
+console.log('orderReduceResult', orderReduceResult);
+
+let orderFindResult = order.find(el => !el.vege);
+console.log('orderFindResult', orderFindResult);

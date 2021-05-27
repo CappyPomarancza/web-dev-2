@@ -1,0 +1,184 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F1F1F1;
+    color: #737373;
+}
+
+.main-container {
+    width: 820px;
+    margin: 50px auto;
+}
+
+.container {
+    background-color: #FFFFFF;
+    padding:25px 0px 0px 40px;
+}
+
+.about-container {
+    padding: 0;
+}
+
+.about-left {
+    width: 200px;
+    height: 200px;
+    background-color: #1D4F89;
+    float: left;
+    color: #FFFFFF;
+}
+
+.about-left p {
+    font-size: 25px;
+    margin: 0px 20px;
+}
+
+.coding-icon{
+    width: 67px;
+    margin: 20px 0px 0px 20px;
+}
+
+.about-right {
+    width: 600px;
+    float: left;
+}
+
+.about-right p {
+    margin: 30px 30px 0px 20px;
+    font-size: 14px;
+}
+
+.clear {
+    clear: both;
+}
+
+.list-header {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    min-height: 45px;
+}
+
+.list p {
+    font-size: 15px;
+}
+
+.list-icon {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 30px;
+    display: block;
+}
+
+hr {
+    margin-left: 50px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.horizontal-line {
+    border-top: 1px solid #E5E5E5;
+}
+
+.special {
+    height: 100px;
+}
+
+.split-list {
+    width: 360px;
+    float: left;
+}
+
+.right-list {
+    border-left: 1px solid #E5E5E5;
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.list-icon-box {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+.benefits-section {
+    width: 820px;
+    margin: 15px auto;
+    background-color: #FFFFFF;
+}
+
+.square {
+    width: 203px;
+    min-height: 205px;
+    float: left;
+    border: 1px solid rgba(222,222,222,.25);
+}
+
+.square-item {
+    height: 100px;
+    text-align: center;
+}
+
+.square img {
+    margin-top: 38px;
+}
+
+.square-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.square p {
+    text-align: center;
+    width: 145px;
+    margin: 0 auto;
+}
+
+.main-square {
+    background-color: #1D4F89;
+    color: #FFFFFF;
+}
+
+.main-square p {
+    margin-top: 85px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.action-container {
+    padding: 0;
+}
+
+.action-apply-container {
+    height: 100px;
+}
+
+.apply-button {
+    border: none;
+    background-color: #1825AA;
+    color: #FFFFFF;
+    width: 290px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 17px;
+    margin-top: 25px;
+    margin-left: 255px;
+}
+
+.action-button {
+    width: 270px;
+    height: 52px;
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.action-button img {
+    width: 25px;
+}
