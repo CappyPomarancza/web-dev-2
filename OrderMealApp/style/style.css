@@ -1,0 +1,10 @@
+.menu-list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-action-container {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
