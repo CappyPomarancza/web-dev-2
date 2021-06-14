@@ -8,3 +8,30 @@
     display: flex;
     justify-content: space-between;
 }
+
+.home-page-content {
+    height: 620px;
+    background: url("../img/home_page.jpg");
+}
+
+.jumbotron {
+    background-color: #f8f8f8;
+}
+
+.background-container {
+    background: url("../img/pexels-aisha-serafini-5714752.jpg");
+}
+
+.opacity-container {
+    background-color: #f8f8f8;
+    opacity: 0.9;
+    position: relative;
+}
+
+.order-container {
+    min-height: 99vh;
+}
+
+.display-none {
+    display: none;
+}

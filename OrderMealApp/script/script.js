@@ -171,35 +171,143 @@ const order = {
     summary: 0,
 };
 
-const handleMenuItemCLick = (event) => {
+const homePage = document.getElementById('home-page');
+const menuPage = document.getElementById('menu-page');
+const galleryPage = document.getElementById('gallery-page');
+const contactPage = document.getElementById('contact-page');
+const orderPage = document.getElementById('order-page');
+let clickedMenuButtonId = 'home-button-item';
+
+const handleNavButtonClick = (event) => {
+    document.getElementById(clickedMenuButtonId).classList.remove('active');
+    clickedMenuButtonId = event.target.id + '-item'
+    document.getElementById(clickedMenuButtonId).classList.add('active');
+
+    switch(clickedMenuButtonId) {
+        case 'home-button-item':
+            homePage.classList.remove('display-none');
+            menuPage.classList.add('display-none');
+            galleryPage.classList.add('display-none');
+            contactPage.classList.add('display-none');
+            orderPage.classList.add('display-none');
+            break;
+        case 'menu-button-item':
+            menuPage.classList.remove('display-none');
+            homePage.classList.add('display-none');
+            galleryPage.classList.add('display-none');
+            contactPage.classList.add('display-none');
+            orderPage.classList.add('display-none');
+            break;
+        case 'gallery-button-item':
+            galleryPage.classList.remove('display-none');
+            homePage.classList.add('display-none');
+            menuPage.classList.add('display-none');
+            contactPage.classList.add('display-none');
+            orderPage.classList.add('display-none');
+            break;
+        case 'contact-button-item':
+            contactPage.classList.remove('display-none');
+            homePage.classList.add('display-none');
+            menuPage.classList.add('display-none');
+            galleryPage.classList.add('display-none');
+            orderPage.classList.add('display-none');
+            break;
+        case 'order-button-item':
+            orderPage.classList.remove('display-none');
+            homePage.classList.add('display-none');
+            menuPage.classList.add('display-none');
+            galleryPage.classList.add('display-none');
+            contactPage.classList.add('display-none');
+            break;
+    }
+
+}
+
+const checkOrderListLength = () => {
+    if (order.itemList.length > 0) {
+        // ukryć komunikat
+        document.getElementById('empty-order-list-alert').classList.add('display-none');
+    } else {
+        //pokazać komunikat
+        document.getElementById('empty-order-list-alert').classList.remove('display-none');
+    }
+}
+
+const renderOrderResume = () => {
+    let orderSummary = 0;
+    order.itemList
+        .map(item => {
+        orderSummary += item.price
+    })
+    document.getElementById('order-summary').innerText = 'Suma ' + orderSummary + 'zł';
+}
+
+
+const handleMenuItemAddCLick = (event) => {
     const clickedItem = menu.find(item => item.id == event.target.id);
     order.itemList.push(clickedItem);
-    console.log('order.itemList', order.itemList);
+    const orderItem = createMenuItem(clickedItem, true);
+    document.getElementById('order-list').appendChild(orderItem);
+    checkOrderListLength();
+    renderOrderResume();
 };
+
+const handleMenuItemRemoveClick = (event) => {
+    const clickedItem = document.getElementById('menu-' + event.target.id);
+    clickedItem.parentNode.removeChild(clickedItem);
+    order.itemList = order.itemList.filter(item => item.id != event.target.id);
+    checkOrderListLength();
+    renderOrderResume();
+}
+
+const createActionItemContainer = (item, orderMode) => {
+    const actionItemContainer = document.createElement('div');
+    actionItemContainer.className = 'item-action-container';
+    const priceButton = document.createElement('button');
+    priceButton.className = 'btn btn-disabled';
+    priceButton.innerText = item.price + ' zł';
+    actionItemContainer.appendChild(priceButton);
+
+    if (!orderMode) {
+        const orderButton = document.createElement('button');
+        orderButton.className = 'btn btn-primary';
+        orderButton.innerText = 'Dodaj';
+        orderButton.id = item.id;
+        orderButton.addEventListener('click', handleMenuItemAddCLick);
+        actionItemContainer.appendChild(orderButton);
+    } else {
+        const removeButton = document.createElement('button');
+        removeButton.className = 'btn btn-danger';
+        removeButton.innerText = 'Usuń';
+        removeButton.id = item.id;
+        removeButton.addEventListener('click', handleMenuItemRemoveClick);
+        actionItemContainer.appendChild(removeButton);
+    }
+
+    return actionItemContainer;
+}
+
+const createMenuItem = (item, orderMode) => {
+    const menuItem = document.createElement('a');
+    menuItem.className = 'list-group-item list-group-item-action menu-list-item';
+    menuItem.innerText = item.name;
+    menuItem.id = (orderMode ? 'menu-' : 'order-') + item.id;
+
+    // if ( orderMode ) {
+    //     menuItem.id = 'menu-' + item.id;
+    // } else {
+    //     menuItem.id = 'order-' + item.id;
+    // }
+
+    const actionItemContainer = createActionItemContainer(item, orderMode);
+    menuItem.appendChild(actionItemContainer);
+    return menuItem;
+}
+
 
 function renderMenu() {
     menu.map(item => {
-        const menuItem = document.createElement('a');
-        menuItem.className = 'list-group-item list-group-item-action menu-list-item';
-        // menuItem.setAttribute('class', 'list-group-item list-group-item-action'); // dodaje atrybut class o przekazanej wartości
-        // const menuItemText = document.createTextNode(item.name);
-        // menuItem.appendChild(menuItemText);
-        menuItem.innerText = item.name;
-
-        const actionItemContainer = document.createElement('div');
-        actionItemContainer.className = 'item-action-container';
-
-        const priceButton = document.createElement('button');
-        priceButton.className = 'btn btn-disabled';
-        priceButton.innerText = item.price + ' zł';
-        const orderButton = document.createElement('button');
-        orderButton.className = 'btn btn-primary';
-        orderButton.innerText = 'Add';
-        orderButton.id = item.id;
-        orderButton.addEventListener('click', handleMenuItemCLick);
-        actionItemContainer.appendChild(priceButton);
-        actionItemContainer.appendChild(orderButton);
-        menuItem.appendChild(actionItemContainer);
+        const menuItem = createMenuItem(item, false);
         document.getElementById(item.type + '-list').appendChild(menuItem);
     });
 }

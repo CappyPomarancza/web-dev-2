@@ -11,32 +11,155 @@
     <link rel="stylesheet" type="text/css" href="./style/style.css"/>
 </head>
     <body>
-        <div class="jumbotron text-center">
-            <h1>Welcome in Culinary Paradise</h1>
-            <p>Resize this responsive page to see the effect!</p>
+
+    <nav class="navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li onclick="handleNavButtonClick(event)" id="home-button-item" class="active">
+                        <a id="home-button" href="#">Główna</a>
+                    </li>
+                    <li onclick="handleNavButtonClick(event)" id="menu-button-item">
+                        <a id="menu-button" href="#" >Menu</a>
+                    </li>
+                    <li onclick="handleNavButtonClick(event)" id="gallery-button-item">
+                        <a id="gallery-button" href="#" >Galeria</a>
+                    </li>
+                    <li onclick="handleNavButtonClick(event)" id="contact-button-item">
+                        <a id="contact-button" href="#">Kontakt</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li onclick="handleNavButtonClick(event)" id="order-button-item"><a id="order-button" href="#">Zamówienie</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moje konto<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Moje dane</a></li>
+                            <li><a href="#">Moje zamówienia</a></li>
+                            <li><a href="#">Moje ....</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Wyloguj</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3>Appetizers</h3>
-                    <div class="list-group"  id="appetizers-list">
+    </nav>
 
+    <div id="home-page" class="">
+        <div class="jumbotron text-center header-container">
+            <h1>Witaj w Kulinarnym Raju</h1>
+            <p>Zaprszamy do zapoznania się z naszym menu!</p>
+            <div class="container home-page-content"></div>
+        </div>
+    </div>
+
+        <div id="menu-page" class="background-container display-none">
+            <div  class="container opacity-container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Przystawki</h3>
+                        <div class="list-group"  id="appetizers-list">
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <h3>Main dishes</h3>
-                    <div class="list-group" id="main-dishes-list">
-
+                    <div class="col-sm-12">
+                        <h3>Dania glówne</h3>
+                        <div class="list-group" id="main-dishes-list">
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <h3>Desserts</h3>
-                    <div class="list-group" id="desserts-list">
-
+                    <div class="col-sm-12">
+                        <h3>Desery</h3>
+                        <div class="list-group" id="desserts-list">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="gallery-page" class="container opacity-container display-none">
+            <h2>Galeria</h2>
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_1.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_2.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_3.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_4.jpg" alt="...">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_m_1.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_m_3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_m_4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_m_5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="img/gallery_m_6.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+            <div id="contact-page" class="container opacity-container display-none">
+                <h2>Strona Kontaktowa</h2>
+            </div>
+
+            <div id="order-page" class="background-container display-none order-container">
+                <div class="container opacity-container">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Twoje zamówienie</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-sm-12" >
+                                <div class="list-group"  id="order-list">
+                                    <div id="empty-order-list-alert" class="alert alert-warning alert-dismissible" role="alert">
+                                        <strong>Uwaga!</strong> Twoje zamówienie jest puste, dodaj pozycje z zakładki Menu by złożyć zamówienie.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <h4 id="order-summary" class="panel-title"></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <script src="./script/script.js"></script>
     </body>
 </html>
